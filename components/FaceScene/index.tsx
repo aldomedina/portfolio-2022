@@ -30,6 +30,7 @@ const Face = () => {
       <group ref={ref} scale={0.28}>
         <primitive object={scene} />
       </group>
+      <AsciiRenderer fgColor="#ffe4c3" />
     </Suspense>
   );
 };
@@ -39,7 +40,6 @@ const FaceScene = () => {
     <Canvas>
       <Face />
       <Lights />
-      <AsciiRenderer fgColor="#ffe4c3" />
     </Canvas>
   );
 };
