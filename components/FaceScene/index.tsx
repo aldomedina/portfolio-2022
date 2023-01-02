@@ -1,18 +1,16 @@
-import { Effects, useGLTF } from "@react-three/drei";
+import { Effects, useGLTF, Html, useProgress } from "@react-three/drei";
 import { AsciiEffect } from "three-stdlib";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import React, {
-  Suspense,
-  useEffect,
-  useLayoutEffect,
-  useMemo,
-  useRef,
-} from "react";
+import React, { Suspense, useRef } from "react";
+import { easing } from "maath";
 import Lights from "./Lights";
 import AsciiRenderer from "./AsciiRenderer";
 import { Group } from "three";
-import { degToRad } from "three/src/math/MathUtils";
-import { easing } from "maath";
+
+function Loader() {
+  const { progress } = useProgress();
+  return <Html center>{progress} % loaded</Html>;
+}
 
 const Face = () => {
   const ref = useRef<Group>(null);
@@ -28,7 +26,7 @@ const Face = () => {
     );
   });
   return (
-    <Suspense>
+    <Suspense fallback={<Loader />}>
       <group ref={ref} scale={0.28}>
         <primitive object={scene} />
       </group>
