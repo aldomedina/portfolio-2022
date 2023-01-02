@@ -1,0 +1,36 @@
+.main {
+  height: calc(100% - 2rem);
+  background: #ff1844;
+  border: 1rem solid #ffaedf;
+  font-size: 1.4rem;
+  .wrapper {
+    position: fixed;
+    top: 2rem;
+    left: 2rem;
+    color: #ffe4c3;
+    height: calc(100% - 4rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: calc(100% - 4rem);
+    .header {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      .h1 {
+        line-height: 0.8;
+        font-size: 4rem;
+      }
+    }
+    .bio {
+      max-width: 450px;
+    }
+  }
+}
+.link {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  color: #ffe4c3;
+  cursor: pointer;
+}
